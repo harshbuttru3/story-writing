@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body{
+            padding:30px;
+            background:linear-gradient(to right, #e2e2e2, #c9d6ff);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #c9d6ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        nav span {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: blueviolet;
+        }
+        h1{
+            text-align:center;
+        }
+        button{
+            color:blueviolet;
+            background-color:#c9d6ff;
+            padding:5px;
+            border-radius:5px;
+            font-size:1rem;
+            font-weight:bold;
+            border:none;
+        }
+        button:hover{
+            text-decoration: underline;
+            color:blue;
+        }
+        div{
+            margin: 10px 15%;
+            font-size:20px;
+            padding:10px;
+            font-weight:400;
+            color:rgb(12,11,11);
+            background-color: white;
+            border-radius: 5px;
+        }
+        span{
+            font-weight:600;
+            font-size:22px;
+            color:black;
+        }
+      
+    </style>
+    <script type="module" src="./homepage.js"></script>
+</head>
+<body>
+    <nav>
+        <span id="welcomeUser">Welcome,&nbsp; </span>
+        <span>
+        <span id="userEmail">&nbsp;</span>
+        <button id="logout" style="color: red;">Logout</button>
+        </span>
+    </nav>
+    <h1>Welcome to the Homepage</h1>
+    <div>Hindi Story Writing</div>
+    <div>Hindi Poem Writing</div>
+    <div>Maithili Story Writing</div>
+    <div>Maithili Poem Writing</div>
+    
+</body>
+</html>

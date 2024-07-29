@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Your Email</title>
+</head>
+<body>
+    <h1>Please Verify Your Email</h1>
+    <p>We have sent a verification email to your registered email address. Please verify your email to proceed further.</p>
+    <p>If you did not receive the email or the link has expired, click the button below to resend the verification email.</p>
+    <button id="resendVerification">Resend Verification Email</button>
+    <div id="message"></div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAT2yL3CxUBzvqcKW8g5nBqzFyvTVhheu0",
+            authDomain: "story-writing-8549e.firebaseapp.com",
+            projectId: "story-writing-8549e",
+            storageBucket: "story-writing-8549e.appspot.com",
+            messagingSenderId: "497629109391",
+            appId: "1:497629109391:web:dc9c2abac2e4f0cf5424fa",
+            measurementId: "G-Q49T2CN7MH"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        function showMessage(message) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.style.display = "block";
+            messageDiv.innerHTML = message;
+            messageDiv.style.opacity = 1;
+            setTimeout(function() {
+                messageDiv.style.opacity = 0;
+            }, 5000);
+        }
+
+        document.getElementById('resendVerification').addEventListener('click', () => {
+            const user = auth.currentUser;
+            if (user) {
+                sendEmailVerification(user)
+                    .then(() => {
+                        showMessage('Verification email sent again. Please check your inbox.');
+                    })
+                    .catch((error) => {
+                        console.error("Error sending verification email:", error);
+                        showMessage('Error sending verification email.');
+                    });
+            } else {
+                showMessage('No user is currently signed in.');
+            }
+        });
+
+        // Check if the user's email is verified
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                user.reload().then(() => {
+                    if (user.emailVerified) {
+                        localStorage.setItem('loggedInUserId', user.uid);
+                        window.location.href = 'homepage.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
