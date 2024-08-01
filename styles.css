@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    text-decoration: none;
 }
 
 nav {
@@ -68,12 +69,19 @@ section p {
 #contact p {
     line-height: 1.4;
 }
-
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    text-decoration:dashed;
+    color: rgb(98, 98, 236);
+}
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    nav ul{
+        display: flex;
     }
+
 
     section {
         padding: 1em 5%;
@@ -81,5 +89,8 @@ section p {
 
     header h1 {
         font-size: 2em;
+    }
+    .onlypc{
+        display: none;
     }
 }

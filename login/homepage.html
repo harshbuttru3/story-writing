@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homepage for the story and poem writing competition in Hindi and Maithili languages.">
+    <meta name="author" content="Your Name">
     <title>Homepage</title>
     <style>
         body{
+            
             padding:30px;
-            background:linear-gradient(to right, #e2e2e2, #c9d6ff);
+            background:linear-gradient(to right, rgba(142, 141, 231, 0.801), #c9d6ff);
         }
         nav {
             display: flex;
             justify-content: space-between;
-            background-color: #c9d6ff;
+            background-color: #c9e2ff;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 30px;
@@ -20,22 +23,23 @@
         nav span {
             font-weight: bold;
             font-size: 1.2rem;
-            color: blueviolet;
+            color: rgb(127, 8, 239);
         }
         h1{
             text-align:center;
         }
         button{
             color:blueviolet;
-            background-color:#c9d6ff;
+            background-color:#c9fff1;
             padding:5px;
             border-radius:5px;
             font-size:1rem;
             font-weight:bold;
             border:none;
+            cursor: pointer;
         }
         button:hover{
-            text-decoration: underline;
+            /* text-decoration: underline; */
             color:blue;
         }
         div{
@@ -44,7 +48,7 @@
             padding:10px;
             font-weight:400;
             color:rgb(12,11,11);
-            background-color: white;
+            background-color: rgba(113, 176, 159, 0.256);
             border-radius: 5px;
         }
         span{
@@ -52,23 +56,22 @@
             font-size:22px;
             color:black;
         }
-      
     </style>
-    <script type="module" src="./homepage.js"></script>
 </head>
 <body>
     <nav>
-        <span id="welcomeUser">Welcome,&nbsp; </span>
-        <span>
-        <span id="userEmail">&nbsp;</span>
-        <button id="logout" style="color: red;">Logout</button>
-        </span>
+        <span id="welcomeUser">Welcome, &nbsp; </span>
+        
     </nav>
     <h1>Welcome to the Homepage</h1>
-    <div>Hindi Story Writing</div>
-    <div>Hindi Poem Writing</div>
-    <div>Maithili Story Writing</div>
-    <div>Maithili Poem Writing</div>
-    
+    <div id="hindi_story" class="clickable-div">Hindi Story Writing</div>
+<div id="hindi_poem" class="clickable-div">Hindi Poem Writing</div>
+<div id="maithili_story" class="clickable-div">Maithili Story Writing</div>
+<div id="maithili_poem" class="clickable-div">Maithili Poem Writing</div>
+<br><br>
+<span id="userEmail"></span>
+<br><br>
+    <button id="logout">Logout</button>
+    <script type="module" src="./homepage.js"></script>
 </body>
 </html>

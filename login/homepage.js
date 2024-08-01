@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getFirestore, doc, getDoc, query, where, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAT2yL3CxUBzvqcKW8g5nBqzFyvTVhheu0",
@@ -14,45 +14,60 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth();
 const db = getFirestore();
 
-onAuthStateChanged(auth, (user) => {
+const checkSubmission = async (userId, type) => {
+    try {
+        const submissionsRef = collection(db, "submissions");
+        const q = query(submissionsRef, where("uid", "==", userId), where("type", "==", type));
+        const querySnapshot = await getDocs(q);
+        
+        return !querySnapshot.empty;
+    } catch (error) {
+        console.error('Error checking submission:', error);
+        return false;
+    }
+};
+
+onAuthStateChanged(auth, async (user) => {
     if (user) {
         const loggedInUserId = user.uid;
-        if (loggedInUserId) {
-            const docRef = doc(db, "users", loggedInUserId);
-            getDoc(docRef)
-                .then((docSnap) => {
-                    if (docSnap.exists()) {
-                        const userData = docSnap.data();
-                        document.getElementById('welcomeUser').innerText += userData.firstName;
-                        document.getElementById('userEmail').innerText = userData.email;
-                    } else {
-                        console.log("No document found matching ID");
-                    }
-                })
-                .catch((error) => {
-                    console.log("Error getting document: ", error);
-                });
-        } else {
-            console.log("User ID not found in local storage");
+
+        console.log("username: ", user);
+        const categories = [
+            { id: "hindi_story", type: "hindi_story" },
+            { id: "hindi_poem", type: "hindi_poem" },
+            { id: "maithili_story", type: "maithili_story" },
+            { id: "maithili_poem", type: "maithili_poem" }
+        ];
+
+        for (const { id, type } of categories) {
+            const hasSubmitted = await checkSubmission(loggedInUserId, type);
+            const div = document.getElementById(id);
+            if (hasSubmitted) {
+                div.innerText = `You have already submitted for ${div.innerText}`;
+                div.style.cursor = 'not-allowed';
+                div.onclick = null;
+            } else {
+                div.onclick = () => window.location.href = `form_${type}.html`;
+                div.style.cursor = 'pointer';
+            }
         }
+
+        document.getElementById('welcomeUser').innerText += user.displayName || "User";
+        document.getElementById('userEmail').innerText = user.email;
     } else {
         console.log("No user is currently signed in");
+        window.location.href = "login.html"; // <-- Added to redirect if not signed in
     }
 });
 
-const logoutButton = document.getElementById('logout');
-
-logoutButton.addEventListener('click', () => {
-    signOut(auth)
-        .then(() => {
-            localStorage.removeItem('loggedInUserId');
-            window.location.href = 'login.html';
-        })
-        .catch((error) => {
-            console.error('Error Signing out:', error);
-        });
+// Logout function
+document.getElementById('logout').addEventListener('click', () => {
+    auth.signOut().then(() => {
+        window.location.href = "login.html"; // <-- Added to redirect after logout
+    }).catch((error) => {
+        console.error("Error logging out:", error);
+    });
 });

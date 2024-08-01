@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Poem Writing Submission</title>
+    <link rel="stylesheet" href="form.css">
+    <script type="module" src="./form.js"></script>
+</head>
+<body>
+    <script type="module" src="./auth_check.js"></script>
+    <form id="submissionForm">
+        <h1>Hindi Poem Writing Submission</h1>
+        <input type="text" id="userName" name="userName" placeholder="Name" readonly />
+        <input type="email" id="userEmail" name="userEmail" placeholder="Email" readonly />
+        <textarea id="textContent" name="textContent" rows="10" placeholder="Write your Story here..." maxlength="2000"></textarea>
+        <input type="file" id="fileInput" name="fileInput" />
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

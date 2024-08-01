@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -17,17 +17,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 function showMessage(message, divId) {
-    var messageDiv = document.getElementById(divId);
+    const messageDiv = document.getElementById(divId);
     messageDiv.style.display = "block";
     messageDiv.innerHTML = message;
     messageDiv.style.opacity = 1;
-    setTimeout(function() {
+    setTimeout(() => {
         messageDiv.style.opacity = 0;
     }, 5000);
 }
 
 const signUp = document.getElementById('submitSignUp');
-signUp.addEventListener('click', (event) => {
+signUp.addEventListener('click', async (event) => {
     event.preventDefault();
     const email = document.getElementById('rEmail').value;
     const password = document.getElementById('rPassword').value;
@@ -37,67 +37,67 @@ signUp.addEventListener('click', (event) => {
     const auth = getAuth();
     const db = getFirestore();
 
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
+
+        // Update display name
+        await updateProfile(user, {
+            displayName: `${firstName} ${lastName}`
+        });
+
         const userData = {
             email: email,
             firstName: firstName,
-            lastName: lastName
+            lastName: lastName,
+            displayName: user.displayName
         };
 
         // Send email verification
-        sendEmailVerification(user)
-        .then(() => {
-            showMessage('Verification Email Sent! Please check your inbox.', 'signUpMessage');
-        });
+        await sendEmailVerification(user);
+        showMessage('Verification Email Sent! Please check your inbox.', 'signUpMessage');
 
+        await setDoc(doc(db, "users", user.uid), userData);
         showMessage('Account Created Successfully', 'signUpMessage');
-        const docRef = doc(db, "users", user.uid);
-        setDoc(docRef, userData)
-        .then(() => {
-            window.location.href = 'verify-email.html'; // Redirect to verification page
-        })
-        .catch((error) => {
-            console.error("error writing document", error);
-        });
-    })
-    .catch((error) => {
+        
+        window.location.href = 'verify-email.html'; // Redirect to verification page
+    } catch (error) {
         const errorCode = error.code;
-        if (errorCode == 'auth/email-already-in-use') {
+        if (errorCode === 'auth/email-already-in-use') {
             showMessage('Email Address Already Exists !!!', 'signUpMessage');
         } else {
             showMessage('Unable to create User', 'signUpMessage');
         }
-    });
+    }
 });
 
 const signIn = document.getElementById('submitSignIn');
-signIn.addEventListener('click', (event) => {
+signIn.addEventListener('click', async (event) => {
     event.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const auth = getAuth();
 
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
 
-            if (user.emailVerified) {
-                showMessage('Login is successful', 'signInMessage');
-                localStorage.setItem('loggedInUserId', user.uid);
-                window.location.href = 'homepage.html';
-            } else {
-                showMessage('Please verify your email to proceed', 'signInMessage');
-                window.location.href = 'verify-email.html'; // Redirect to verification page
-            }
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            if (errorCode === 'auth/invalid-credential') {
-                showMessage('Incorrect Email or Password', 'signInMessage');
-            } else {
-                showMessage('Account does not Exist', 'signInMessage');
-            }
-        });
+        if (user.emailVerified) {
+            showMessage('Login is successful', 'signInMessage');
+            localStorage.setItem('loggedInUserId', user.uid);
+            window.location.href = 'homepage.html';
+        } else {
+            showMessage('Please verify your email to proceed', 'signInMessage');
+            window.location.href = 'verify-email.html'; // Redirect to verification page
+        }
+    } catch (error) {
+        const errorCode = error.code;
+        if (errorCode === 'auth/wrong-password') {
+            showMessage('Incorrect Email or Password', 'signInMessage');
+        } else if (errorCode === 'auth/user-not-found') {
+            showMessage('Account does not Exist', 'signInMessage');
+        } else {
+            showMessage('Error logging in', 'signInMessage');
+        }
+    }
 });

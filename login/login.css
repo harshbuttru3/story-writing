@@ -146,3 +146,43 @@ button:hover{
     animation:fadeOut 7s forwards;
 
 }
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+    .form-title {
+        font-size: 1.3rem;
+    }
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .links div {
+        margin-bottom: 1rem;
+    }
+    .icons i {
+        font-size: 1.3rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+    .form-title {
+        font-size: 1.2rem;
+    }
+    .links {
+        padding: 0 2rem;
+    }
+    .icons i {
+        font-size: 1rem;
+        padding: 0.3rem 0.8rem;
+    }
+    button {
+        font-size: 1rem;
+        padding: 6px 0;
+    }
+}
