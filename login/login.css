@@ -146,6 +146,55 @@ button:hover{
     animation:fadeOut 7s forwards;
 
 }
+#phoneForm {
+    display: none;
+}
+
+#phoneForm i {
+    font-size: 1.5rem;
+    color: hsl(327, 90%, 28%);
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+}
+
+#phoneForm input {
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #757575;
+    padding-left: 1.5rem;
+    font-size: 15px;
+    width: calc(100% - 3rem);
+}
+
+#phoneForm input:focus {
+    border-bottom: 2px solid hsl(327, 90%, 28%);
+    outline: none;
+}
+
+#phoneForm input::placeholder {
+    color: #757575;
+    opacity: 1;
+}
+
+#phoneForm button {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 90%;
+    background: rgb(125, 125, 235);
+    color: white;
+    cursor: pointer;
+    transition: 0.9s;
+}
+
+#phoneForm button:hover {
+    background: #07001f;
+}
+
 @media (max-width: 768px) {
     .container {
         width: 80%;

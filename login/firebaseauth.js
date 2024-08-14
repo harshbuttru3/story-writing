@@ -16,6 +16,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+
 function showMessage(message, divId) {
     const messageDiv = document.getElementById(divId);
     messageDiv.style.display = "block";
@@ -101,3 +102,5 @@ signIn.addEventListener('click', async (event) => {
         }
     }
 });
+
+

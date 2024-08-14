@@ -18,6 +18,7 @@
     </nav>
 
     <header id="home">
+        <h3>Welcome to the</h3>
         <h1>Welcome to the Story and Poem Writing Competition!</h1>
     </header>
 
@@ -109,5 +110,15 @@
         <p>Email: info@writingcompetition.com</p>
         <p>Phone: +91-1234567890</p>
     </section>
+    <script>
+          function detectMobile() {
+            // Check if the user is on a mobile device
+            const isMobile = /iPhone|iPad|iPod|Android|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.location.href = "/mobile/index.html";
+            }
+        }
+        window.onload = detectMobile;
+    </script>
 </body>
 </html>

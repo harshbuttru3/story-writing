@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maithili Poem Writing Submission</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script type="module" src="./form.js"></script>
+</head>
+<body>
+    <script type="module" src="./auth_check.js"></script>
+    <form id="submissionForm">
+        <h1>Maithili Poem Writing Submission</h1>
+        <input type="text" id="userName" name="userName" placeholder="Name" readonly />
+        <input type="email" id="userEmail" name="userEmail" placeholder="Email" readonly />
+        <input type="hidden" id="formType" name="formType" value="maithiliPoem">
+        <textarea id="textContent" name="textContent" rows="10" placeholder="Write your poem here..." maxlength="2000"></textarea>
+        <input type="file" id="fileInput" name="fileInput" />
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <h2 class="instructions">Instructions</h2>
+        <ul>
+            <li>The size of file should be less than 5mb.</li>
+            <li>file can be either pdf,jpg,jpeg or png</li>
+            <li>consider renaming the file name (if uploading) to maithili-story </li>
+            <li>You will be redirected to payment gateway and after successfull payment only your form will be submitted to our database.</li>
+            <li>submit the form carefully as you will not be able to resubmit the form</li>
+            <li>Best of luck !</li>
+        </ul>
+    </div>
+</body>
+</html>
