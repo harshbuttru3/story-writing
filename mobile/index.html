@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+    <!-- font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+      /* Apply to the entire page */
+      html, body {
+          overflow-x: hidden;
+          margin: 0;
+          padding: 0;
+      }
+
+      /* Example container to demonstrate overflow handling */
+      .container {
+          width: 200%;
+          height: 100vh;
+          background: lightblue;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="prototype">
+      <img
+        class="vecteezy-3d-certificate-or-dip-icon"
+        loading="lazy"
+        alt=""
+        src="./public/vecteezy-3dcertificateordiplomaiconwithstampandribbonbow-9315293-1@2x.png"
+      />
+
+      <img
+        class="vecteezy-3d-concept-of-media-f-icon"
+        loading="lazy"
+        alt=""
+        src="./public/vecteezy-3dconceptofmediafilemanagementsearchingimageand-8879448-1@2x.png"
+      />
+
+      <img
+        class="vecteezy-3d-blank-white-sheet-icon"
+        loading="lazy"
+        alt=""
+        src="./public/vecteezy-3dblankwhitesheetandpencilfloatingontransparent-12896686-1@2x.png"
+      />
+
+      <div class="vecteezy-3d-kid-character-get-parent">
+        <img
+          class="vecteezy-3d-kid-character-get-icon"
+          alt=""
+          src="./public/newkid.png"
+        />
+
+        <img
+          class="vecteezy-3d-blank-white-sheet-icon1"
+          loading="lazy"
+          alt=""
+          src="./public/vecteezy-3dblankwhitesheetandpencilfloatingontransparent-12896686-2@2x.png"
+        />
+
+        <img
+          class="vecteezy-3d-illustration-of-au-icon"
+          loading="lazy"
+          alt=""
+          src="./public/vecteezy-3dillustrationofaudiobookschooleducationicon-28027824-1@2x.png"
+        />
+      </div>
+      <img
+        class="vecteezy-3d-illustration-of-au-icon1"
+        alt=""
+        src="./public/vecteezy-3dillustrationofaudiobookschooleducationicon-28027824-2@2x.png"
+      />
+      <section class="competition-info">
+        <div class="competition-title">
+          <div class="welcome-to-the">welcome to the</div>
+          <div class="story-and-poem-container">
+            <p class="story-and">story and</p>
+            <p class="story-and">poem writing</p>
+            <p class="story-and">competition</p>
+          </div>
+        </div>
+        <div class="platform-description">
+          <div class="we-provide-you">
+            we provide you a wonderful platform where you can represent your
+            creativity of writing and Win some exciting price.
+          </div>
+        </div>
+        <div class="login-button">
+          <button class="login" onclick="window.location.href='../login/login.html'">
+            <div class="login-child"></div>
+            <div class="login-now">Participate now</div>
+          </button>
+        </div>
+        <div class="competition-options">
+          <div class="options-title-parent">
+            <div class="options-title">
+              <div class="options-title-parent">
+                <div class="competitions">COMPETITIONS</div>
+                <div class="options-divider">
+                  <div class="divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="select-any-option">
+              SELECT ANY OPTION TO PARTICIPATE
+            </div>
+          </div>
+        </div>
+        <div class="hindi-options">
+          <div class="rectangle-parent">
+            <div class="frame-child"></div>
+            <button onclick="redirect()" class="hidden">
+            <div class="hindi-story-writing-container">
+              <p class="story-and">HINDI STORY</p>
+              <p class="story-and">WRITING</p>
+            </div>
+          </button>
+          </div>
+          <div class="rectangle-group">
+            <div class="frame-child"></div>
+            <button onclick="redirect()" class="hidden">
+              <div class="hindi-poem-writing-container">
+                <p class="story-and">HINDI POEM</p>
+                <p class="story-and">WRITING</p>
+              </div>
+          </button>
+          </div>
+        </div>
+        <div class="hindi-options">
+          <div class="maithili-story">
+            <div class="frame-child"></div>
+            <button onclick="redirect()" class="hidden">
+            <div class="hindi-poem-writing-container">
+              <p class="story-and">MAITHILI STORY</p>
+              <p class="writing2">WRITING</p>
+            </div>
+          </button>
+          </div>
+          <div class="maithili-poem">
+            <div class="maithili-poem-container">
+              <div class="maithili-poem-container-child"></div>
+              <div class="maithili-poem-divider">
+                <div class="poem-divider"></div>
+                <div class="poem-divider1"></div>
+              </div>
+              <button onclick="redirect()" class="hidden">
+              <div class="maithili-poem-writing-container">
+                <p class="story-and">MAITHILI POEM</p>
+                <p class="story-and">WRITING</p>
+              </div>
+            </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <img
+        class="vecteezy-3d-blank-white-sheet-icon2"
+        loading="lazy"
+        alt=""
+        src="./public/vecteezy-3dblankwhitesheetandpencilfloatingontransparent-12896686-21@2x.png"
+      />
+
+      <section class="overview-title-parent">
+        <div class="overview-title">
+          <div class="overview">OVERVIEW</div>
+          <div class="overview-divider"></div>
+        </div>
+        <div class="hindi-description">
+          <div class="hindi">HINDI:</div>
+          <div class="submit-your-story-and-poem-to-wrapper">
+            <div class="submit-your-story-container">
+              <span class="ubmit-your-story"
+                >Submit your story and poem to enrich the rich tradition of
+                indian literature and get recognition for your
+                creativity.</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="maithili">MAITHILI:</div>
+      </section>
+      <div class="submit-your-story-container1">
+        <span class="ubmit-your-story"
+          >Submit your story and poem to enrich the RICH LITERATURE OF
+          MAITHILANCHAL AND SHOWCASE YOUR WRITING TALENT.</span
+        >
+      </div>
+      <div class="prototype-child"></div>
+      <div class="div">1</div>
+      <img
+        class="vecteezy-3d-high-quality-guara-icon"
+        loading="lazy"
+        alt=""
+        src="./public/vecteezy-3dhighqualityguaranteesymbolmedalbuttonwithstar-18842799-1@2x.png"
+      />
+
+      <div class="vecteezy-people-characters-sta-parent">
+        <img
+          class="vecteezy-people-characters-sta-icon"
+          loading="lazy"
+          alt=""
+          src="./public/vecteezy-peoplecharactersstandingneargoldcupandcelebrating-27389253-1@2x.png"
+        />
+
+        <img
+          class="vecteezy-3d-high-quality-guara-icon1"
+          alt=""
+          src="./public/vecteezy-3dhighqualityguaranteesymbolmedalbuttonwithstar-18842799-2@2x.png"
+        />
+      </div>
+      <section class="frame-parent">
+        <div class="frame-group">
+          <div class="rectangle-container">
+            <div class="frame-inner"></div>
+            <img
+              class="vecteezy-3d-blank-white-sheet-icon3"
+              loading="lazy"
+              alt=""
+              src="./public/vecteezy-3dblankwhitesheetandpencilfloatingontransparent-12896686-1-1@2x.png"
+            />
+
+            <div class="frame-wrapper">
+              <div class="frame-div">
+                <div class="rectangle-div"></div>
+                <div class="rule-and-guidelines-parent">
+                  <div class="rule-and-guidelines">RULE AND GUIDELINES</div>
+                  <img class="line-icon" alt="" src="./public/line-3.svg" />
+                </div>
+              </div>
+            </div>
+            <div class="entry-rule-parent">
+              <div class="entry-rule">
+                <div class="only-one-entry-container">
+                  <span class="o">o</span>
+                  <span class="ubmit-your-story"
+                    >NLY ONE ENTRY PER COMPETITION.</span
+                  >
+                </div>
+              </div>
+              <div class="originality-rule">
+                <div class="originality-container">
+                  <div class="originality-content">
+                    <div class="originality-content-child"></div>
+                    <div class="div1">2</div>
+                  </div>
+                  <div class="word-limit">
+                    <div class="originality-content">
+                      <div class="ellipse-div"></div>
+                      <div class="separator">3</div>
+                    </div>
+                    <div class="originality-content">
+                      <div class="ellipse-div"></div>
+                      <div class="div2">4</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="publication-rule">
+                  <div class="maximum-words-limit-for-story-parent">
+                    <div class="maximum-words-limit-container">
+                      <span class="o">M</span>
+                      <span class="ubmit-your-story"
+                        >AXIMUM WORDS LIMIT FOR STORY : 2000 WORDS.</span
+                      >
+                    </div>
+                    <div class="maximum-lines-for-container">
+                      <span class="o">M</span>
+                      <span class="ubmit-your-story"
+                        >AXIMUM LINES FOR POEM: 50.</span
+                      >
+                    </div>
+                    <div class="writing-must-be-container">
+                      <span class="o">W</span>
+                      <span class="ubmit-your-story"
+                        >RITING MUST BE ORIGINAL AND UNPUBLISHED.</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="approved-icon">
+            <img
+              class="vecteezy-approved-icon-design-"
+              alt=""
+              src="./public/vecteezy-approvedicondesign-27140870-1@2x.png"
+            />
+
+            <div class="ellipse-container">
+              <div class="frame-child2"></div>
+              <div class="div3">1</div>
+            </div>
+          </div>
+        </div>
+        <div class="prizes-container-wrapper">
+          <div class="prizes-container">
+            <div class="prizes-title">
+              <a class="prizes">PRIZES</a>
+              <div class="prizes-divider"></div>
+            </div>
+            <div class="competition-scope">
+              <div class="for-both-hindi">
+                FOR BOTH HINDI AND MAITHILI COMPETITION
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <img
+        class="vecteezy-3d-illustration-of-au-icon2"
+        loading="lazy"
+        alt=""
+        src="./public/vecteezy-3dillustrationofaudiobookschooleducationicon-28027824-2@2x.png"
+      />
+
+      <section class="prize-list">
+        <div class="first-prize">
+          <div class="first-prize-container">
+            <div class="first-prize-container-child"></div>
+            <img
+              class="vecteezy-3d-badge-winner-for-1-icon"
+              loading="lazy"
+              alt=""
+              src="./public/vecteezy-3dbadgewinnerfor1stfirstplacewinnerawardsand-18842631-1@2x.png"
+            />
+
+            <div class="first-prize-label">
+              <div class="st-prize-wrapper">
+                <div class="st-prize">
+                  1st
+                  <span class="s">prize</span>
+                </div>
+              </div>
+              <div class="div4">₹6000</div>
+            </div>
+          </div>
+        </div>
+        <div class="second-prize">
+          <div class="second-prize-container">
+            <div class="second-prize-container-child"></div>
+            <div class="second-prize-content">
+              <div class="prize-rank">
+                <div class="nd-prize">
+                  2nd
+                  <span class="s">prize</span>
+                </div>
+              </div>
+              <div class="second-prize-amount">
+                <div class="div5">₹3000</div>
+              </div>
+            </div>
+            <img
+              class="vecteezy-3d-badge-winner-for-2-icon"
+              loading="lazy"
+              alt=""
+              src="./public/vecteezy-3dbadgewinnerfor2ndsecondplacewinnerawardsand-18842766-1@2x.png"
+            />
+          </div>
+          <div class="third-prize-rank-parent">
+            <div class="prize-rank">
+              <div class="rd-prize">
+                3rd
+                <span class="s">prize</span>
+              </div>
+            </div>
+            <div class="caution-symbol">₹1000</div>
+            <div class="third-prize-amount">
+              <div class="third-prize-amount-child"></div>
+              <img
+                class="vecteezy-3d-badge-winner-for-3-icon"
+                loading="lazy"
+                alt=""
+                src="./public/vecteezy-3dbadgewinnerfor3rdthirdplacewinnerawardsand-18842778-1@2x.png"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <img
+        class="vecteezy-illustration-3d-symbo-icon"
+        loading="lazy"
+        alt=""
+        src="./public/vecteezy-illustration3dsymbolswithcautionsymbols-22796208-1@2x.png"
+      />
+
+      <img
+        class="vecteezy-illustration-3d-symbo-icon1"
+        loading="lazy"
+        alt=""
+        src="./public/vecteezy-illustration3dsymbolswithcautionsymbols-22796208-2@2x.png"
+      />
+
+      <section class="important-dates">
+        <div class="submission-dates">
+          <div class="submission-dates-child"></div>
+          <div class="submission-title">
+            <div class="prizes-container">
+              <div class="dates-header">
+                <div class="important-dates1">important dates</div>
+                <div class="dates-header-child"></div>
+              </div>
+              <div class="announcement">
+                <div class="for-both-hindi">
+                  of submisssion and results announcement
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="submission-date">
+            <div class="submission-date-content-parent">
+              <div class="submission-date-content">
+                <div class="ellipse-div"></div>
+                <div class="div6">1</div>
+              </div>
+              <div class="last-date-for">
+                last date for submission: september 25, 2024
+              </div>
+            </div>
+            <div class="result-date">
+              <div class="submission-date-content">
+                <div class="ellipse-div"></div>
+                <div class="div7">2</div>
+              </div>
+              <div class="results-announcement-septembe-parent">
+                <div class="results-announcement-septembe">
+                  results announcement: will be notified later.
+                </div>
+                <div class="brand-facebook"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="contact">
+          <div class="contact-child"></div>
+          <div class="contact-info">
+            <div class="contact-us">contact us</div>
+            <div class="contact-info-child"></div>
+            <div class="for-any-queries">
+              For any queries, feel free to reach out at:
+            </div>
+          </div>
+          <div class="contact-details">
+            <div class="email-infowritingcompetionc">
+              Email: jrudranarayan763@gmail.com
+            </div>
+            <div class="email-infowritingcompetionc"><i class="fa-brands fa-whatsapp icon" style="color: #15f961;"></i>Whatsapp: <a href="https://wa.link/dkwys9">+91 84058 22178</a></div>
+            <div class="email-infowritingcompetionc">
+              <i class="fa-brands fa-instagram icon"></i>Instagram: <a href="http://instagram.com/famewriter.online" target="_blank" rel="noopener noreferrer">Famewriter.online</a>
+            </div>
+          </div>
+          <p id="harsh">Made with <i class="fa-solid fa-heart" style="color: #ff2e2e;"></i> by <a href="http://harshbuttru3.github.io/portfolio" target="_blank" rel="noopener noreferrer">Harsh</a></p>
+          <div class="social-media">
+            <div class="social-links">
+              <div class="contact-info-child"></div>
+              <div class="social-icons-wrapper">
+                <div class="social-icons">
+                  <!-- <img
+                    class="social-icons-child"
+                    loading="lazy"
+                    alt=""
+                    src="./public/group-8.svg"
+                  />
+
+                  <img
+                    class="social-icons-child"
+                    loading="lazy"
+                    alt=""
+                    src="./public/group-9.svg"
+                  />
+
+                  <img
+                    class="social-icons-child"
+                    loading="lazy"
+                    alt=""
+                    src="./public/group-10.svg"
+                  /> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </section>
+      <header class="frame-header">
+        <img src="public/logo.png" alt="famewriter logo" id="logo">
+        <h1 id="logo-txt">Fame Writer</h1>
+        <div class="frame-child4"></div>
+        <img
+          class="vector-icon"
+          loading="lazy"
+          alt=""
+          src="./public/vector.svg"
+        />
+      </header>
+    </div>
+    <script>
+      function redirect(){
+        window.location.href="../login/login.html";
+      }
+    </script>
+  </body>
+</html>

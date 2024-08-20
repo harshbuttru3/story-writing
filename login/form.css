@@ -1,0 +1,37 @@
+body {
+    padding: 30px;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, textarea, button {
+    display: block;
+    width: 100%;
+    margin: 10px -10px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #c9d6ff;
+    color: blueviolet;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    text-decoration: underline;
+}
+.instructions{
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}

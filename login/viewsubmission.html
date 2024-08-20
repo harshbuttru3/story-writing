@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: linear-gradient(to right, rgba(142, 141, 231, 0.801), #c9d6ff);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #submissionDetails {
+            background-color: rgba(113, 176, 159, 0.256);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            color: #444;
+        }
+        p {
+            font-size: 18px;
+        }
+        strong {
+            font-weight: bold;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        b{
+            color: #5c4cf0
+        }
+    </style>
+</head>
+<body>
+    <script src="auth_check.js"></script>
+    <h1>Your Submission</h1>
+    <div id="submissionDetails">
+        <p><strong>Form Type:</strong> <span id="formType"></span></p>
+        <p><strong>Text Content:</strong> <span id="textContent"></span></p>
+        <p><strong>view your Submission:</strong> <a id="fileLink" href="#" download>Download</a></p>
+    </div>
+    <script type="module" src="./view_submission.js"></script>
+</body>
+</html>
+
