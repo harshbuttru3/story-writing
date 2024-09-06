@@ -863,8 +863,8 @@ body, html {
 }
 .for-both-hindi {
   position: relative;
-  letter-spacing: 0.24em;
-  line-height: 0.813rem;
+  letter-spacing: 0.2em;
+  line-height: 4rem;
   text-transform: capitalize;
   z-index: 2;
 }
@@ -1534,7 +1534,7 @@ body, html {
   margin: auto;
 }
 #harsh a{
-  color: rgb(175, 23, 221);
+  color: rgb(53, 119, 219);
   text-decoration: none;
 }
 .icon{
@@ -1543,4 +1543,24 @@ body, html {
  a{
   text-decoration:none;
 
+}
+#prizebtn{
+  position: relative;
+  left: -35%;
+  top: 10px;
+  display: block;
+  margin: auto;
+}
+#prizebtn button{
+  width: 90px;
+  height: 30px;
+  font-size: 20px;
+
+}
+#hindi{
+ background-color: #3cd1f7;
+}
+#hindi,#maithili{
+  border: none;
+  border-radius: 20px;
 }

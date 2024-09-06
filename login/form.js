@@ -1,7 +1,7 @@
 // Import necessary Firebase modules (as before)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-import { getFirestore, setDoc, doc, getDoc, query, where, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, setDoc, doc, query, where, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-storage.js";
 
 // Firebase configuration (as before)
@@ -78,9 +78,9 @@ form.addEventListener('submit', async (event) => {
     // Determine the amount based on the form type
     let amount = 0; // Amount in paise (smallest currency unit)
     if (formType === "hindiPoem" || formType === "maithiliPoem") {
-        amount = 50 * 100; // 50 rupees in paise
+        amount = 29 * 100; // 50 rupees in paise
     } else if (formType === "hindiStory" || formType === "maithiliStory") {
-        amount = 100 * 100; // 100 rupees in paise
+        amount = 79 * 100; // 100 rupees in paise
     }
 
     console.log('Calculated amount in paise:', amount); // Debugging line

@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
     />
+    <link rel="icon" href="./public/logo.png" type="image/x-icon">
     <!-- font awesome cdn  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -310,7 +311,10 @@
             </div>
             <div class="competition-scope">
               <div class="for-both-hindi">
-                FOR BOTH HINDI AND MAITHILI COMPETITION
+                <div id="prizebtn">
+                  <button id="hindi">Story</button>
+                  <button id="maithili">Poem</button>
+                </div>
               </div>
             </div>
           </div>
@@ -322,7 +326,6 @@
         alt=""
         src="./public/vecteezy-3dillustrationofaudiobookschooleducationicon-28027824-2@2x.png"
       />
-
       <section class="prize-list">
         <div class="first-prize">
           <div class="first-prize-container">
@@ -341,7 +344,7 @@
                   <span class="s">prize</span>
                 </div>
               </div>
-              <div class="div4">₹6000</div>
+              <div class="div4" id="prize1">₹6000</div>
             </div>
           </div>
         </div>
@@ -356,7 +359,7 @@
                 </div>
               </div>
               <div class="second-prize-amount">
-                <div class="div5">₹3000</div>
+                <div class="div5" id="prize2">₹3000</div>
               </div>
             </div>
             <img
@@ -373,7 +376,7 @@
                 <span class="s">prize</span>
               </div>
             </div>
-            <div class="caution-symbol">₹1000</div>
+            <div class="caution-symbol" id="prize3">₹1000</div>
             <div class="third-prize-amount">
               <div class="third-prize-amount-child"></div>
               <img
@@ -385,6 +388,7 @@
             </div>
           </div>
         </div>
+        <!-- <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOR MAITHILI PRIZES CHECK RULEBOOK</h6> -->
       </section>
       <img
         class="vecteezy-illustration-3d-symbo-icon"
@@ -410,9 +414,7 @@
                 <div class="dates-header-child"></div>
               </div>
               <div class="announcement">
-                <div class="for-both-hindi">
-                  of submisssion and results announcement
-                </div>
+               
               </div>
             </div>
           </div>
@@ -507,5 +509,6 @@
         window.location.href="../login/login.html";
       }
     </script>
+    <script src="script.js"></script>
   </body>
 </html>
